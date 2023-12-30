@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "rt-check"
+version = "0.1.0"
+description = ""
+authors = ["jaden.seo(제이든) <ajgksi1@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-dotenv = "^1.0.0"
+rich = "^13.7.0"
+pytz = "^2023.3.post1"
+jira = "^3.5.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
