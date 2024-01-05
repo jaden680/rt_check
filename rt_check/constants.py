@@ -14,5 +14,4 @@ USER_NAME = os.getenv("USER_NAME")
 API_TOKEN = os.getenv("API_TOKEN")
 
 #Git
-GIT_REPO = os.getenv("GIT_REPO_PATH")
 TICKET_FILTER = os.getenv("TICKET_FILTER")

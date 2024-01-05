@@ -130,12 +130,12 @@ def main(repo_path, ticket_filter):
     for commit in commits:
         console.print(f"[[bold green]{commit.jira_issue}[/bold green]] : [white]{commit.message}[/white]")
 
-    checked_commits, unchecked_commits, unchecked_issues, jira_tracker = get_commit_and_issue_data(commits)
+    checked_commits, unchecked_commits, unchecked_issues, jira_tracker = get_commit_and_issue_data(commits, ticket_filter)
     print_result(checked_commits, unchecked_commits, unchecked_issues, jira_tracker)
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Jira Issue Checker for Git")
-    parser.add_argument('--path', type=str, default=f'{constants.GIT_REPO}', help='Path to the Git directory')
+    parser.add_argument('--path', type=str, default='.', help='Path to the Git directory')
     parser.add_argument('--filter', type=str, default=f'{constants.TICKET_FILTER}', help='Ticket filter')
     args = parser.parse_args()
     main(args.path, args.filter)
