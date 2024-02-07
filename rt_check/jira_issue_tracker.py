@@ -43,6 +43,12 @@ class JiraReleaseIssueTracker:
         matched_issue = next((issue for issue in self.issues if issue.key == issue_key), None)
         if matched_issue is not None:
             return {"issue": matched_issue, "is_sub_issue": False}
+        
+        try:
+            issue = self.jira.issue(issue_key)
+        except:
+            return None
+    
 
         issue = self.jira.issue(issue_key)
 
