@@ -7,7 +7,11 @@ logging.basicConfig(level=logging.INFO, format='%(message)s')
 
 class JiraReleaseIssueTracker:
     def __init__(self, jira_url, username, api_token, project_key, filter):
-        self.jira = JIRA(jira_url, basic_auth=(username, api_token))
+        options = {
+            'server': jira_url,
+            'verify': False
+        }
+        self.jira = JIRA(options=options, basic_auth=(username, api_token))
         self.project_key = project_key
         self.filter = filter
 
